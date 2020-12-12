@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/profileInfoFragment">
+
+    <fragment
+        android:id="@+id/profileInfoFragment"
+        android:name="com.example.norris_app.fragment.ProfileInfoFragment"
+        android:label="fragment_profile_info"
+        tools:layout="@layout/fragment_profile_info"
+        android:gravity="center"
+        >
+        <action
+            android:id="@+id/action_profileInfoFragment_to_favouriteListFragment"
+            app:destination="@id/favouriteListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteListFragment"
+        android:name="com.example.norris_app.fragment.FavouriteListFragment"
+        android:label="fragment_favourite_list"
+        tools:layout="@layout/fragment_favourite_list" >
+        <argument
+            android:name="user"
+            app:argType="com.example.norris_app.model.User" />
+    </fragment>
+</navigation>

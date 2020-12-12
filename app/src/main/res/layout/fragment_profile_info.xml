@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.ProfileInfoFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isEditMode"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/rightSide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/information"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{isEditMode ? View.GONE : View.VISIBLE}"
+                app:layout_constraintStart_toStartOf="@+id/profil"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:contentDescription="@string/update"
+                        android:src="@drawable/ic_update" />
+
+                    <ImageView
+                        android:id="@+id/favourite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:contentDescription="@string/favourite"
+                        android:src="@drawable/ic_favorite_black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lastnameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical|end"
+                        android:text="@string/name"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/firstnameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="end"
+                        android:text="@string/firstname"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/emailTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="end"
+                        android:text="@string/email"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/birthdayTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="end"
+                        android:text="@string/birthday"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/addressTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="end"
+                        android:text="@string/address"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/cityTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="end"
+                        android:text="@string/city"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/countryTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="end"
+                        android:text="@string/country"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|end"
+                    android:orientation="vertical"
+                    android:visibility="@{isEditMode ? View.VISIBLE : View.GONE}">
+
+                    <!-- last name input-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/lastnameInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/lastnameEditText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/emailEditText"
+                            android:nextFocusDown="@id/emailEditText"
+                            android:nextFocusForward="@id/emailEditText"
+                            android:textColor="@color/colorTextView"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--firstname input-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/firstnameInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/firstnameEditText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/lastnameEditText"
+                            android:nextFocusDown="@id/lastnameEditText"
+                            android:nextFocusForward="@id/lastnameEditText"
+                            android:textColor="@color/colorTextView"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!-- email input-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailEditText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/passwordEditText"
+                            android:nextFocusDown="@id/passwordEditText"
+                            android:nextFocusForward="@id/passwordEditText"
+                            android:textColor="@color/colorTextView"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--birthday input -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/birthdayInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/birthdayEditText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="date"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/addressEditText"
+                            android:nextFocusDown="@id/addressEditText"
+                            android:nextFocusForward="@id/addressEditText"
+                            android:textColor="@color/colorTextView"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- address input-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/addressInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/addressEditText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/cityEditText"
+                            android:nextFocusDown="@id/cityEditText"
+                            android:nextFocusForward="@id/cityEditText"
+                            android:textColor="@color/colorTextView"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--city input-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cityInputLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/cityEditText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/countrySpinner"
+                            android:nextFocusDown="@id/countrySpinner"
+                            android:nextFocusForward="@id/countrySpinner"
+                            android:textColor="@color/colorTextView"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- country select-->
+
+                    <Spinner
+                        android:id="@+id/countrySpinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:textColor="@color/colorTextView" />
+
+                    <Button
+                        android:id="@+id/validate_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/validate" />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/profil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationX="-200dp"
+            app:layout_constraintEnd_toEndOf="@id/rightSide"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_profile"
+            app:tintMode="screen"
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@string/profile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

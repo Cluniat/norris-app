@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">norris-app</string>
+    <string name="title">Chuck Norris App</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="read_it_together">Learn all the Chuck Norris facts</string>
+    <string name="wrong_login">Email or password incorrect</string>
+    <string name="skip">Skip</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="wrong_email">Please enter a correct email address</string>
+    <string name="wrong_password">Please enter a correct password</string>
+    <string name="firstname">First name</string>
+    <string name="name">Last name</string>
+    <string name="birthday">Birthday</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="gender">Gender</string>
+    <string name="one_more_step">One more step to enter Chuck\'s world</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
+    <string name="forget_pass_response">Chuck Norris does not forget password, he decides what it is.</string>
+    <string name="email_exist">Email already in use in another account</string>
+    <string name="created_account">Congratulation your account is created !</string>
+    <string name="home_title">CHUCK NORRIS APP</string>
+    <string name="random_quote">Tap the button below to generate a random Chuck Norris fact</string>
+    <string name="random_btn">Generate</string>
+    <string name="favourite">Favourite</string>
+    <string name="favourite_border">Favourite border</string>
+    <string name="add_favourite">Added to your favourites</string>
+    <string name="remove_favourite">Removed from you favourites</string>
+    <string name="loader">Loader</string>
+    <string name="profile">PROFILE</string>
+    <string name="update">update</string>
+    <string name="validate">Validate</string>
+    <string name="logout">Logout</string>
+    <string name="swipe_to_delete">Swipe left to delete</string>
+    <string name="information">Information</string>
+
+</resources>

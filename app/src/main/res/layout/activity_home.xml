@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/user"
+                android:layout_width="46dp"
+                android:layout_height="42dp"
+                android:layout_gravity="end"
+                android:onClick="onProfil"
+                app:srcCompat="@drawable/ic_user"
+                tools:ignore="VectorDrawableCompat"
+                android:contentDescription="@string/profile" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/ic_chuck_portrait"
+                tools:ignore="VectorDrawableCompat"
+                tools:layout_editor_absoluteX="11dp"
+                tools:layout_editor_absoluteY="16dp"
+                android:onClick="onChuck"/>
+
+            <TextView
+                android:id="@+id/homeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/home_title"
+                android:textColor="@color/colorTextView"
+                android:textSize="36sp"
+                tools:layout_editor_absoluteX="183dp"
+                tools:layout_editor_absoluteY="209dp" />
+
+            <fragment
+                android:id="@+id/fragment"
+                android:name="com.example.norris_app.fragment.QuoteFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>
